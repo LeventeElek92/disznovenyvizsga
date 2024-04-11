@@ -1,0 +1,29 @@
+<div class="card">
+
+    <div class="card-body">
+      <h5 class="card-title">Megrendelés leadása</h5>
+
+      <div class="form-floating mb-3">
+        <input [(ngModel)]="nev" name="name" type="text" class="form-control" id="name">
+        <label for="name">Név</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input [(ngModel)]="cim" name="cim" type="text" class="form-control" id="cim">
+        <label for="cim">Lakcím</label>
+      </div>
+
+      <div *ngIf="kosar && novenyek" class="alert alert-primary" role="alert">
+        <div *ngFor="let tetel of kosar" class="row my-3">
+        <div class="col">{{nevKereses(tetel.key)}}</div>
+        <div class="col">{{tetel.db}}db</div>
+        <div class="col">{{tetel.ar*tetel.db}}Ft</div>
+        <div class="col">
+            <button (click)="tetelTorlese(tetel.key)" type="button" class="btn btn-danger">Törlés</button>
+        </div>    
+        </div>
+      </div>
+      
+      <button (click)="rendelesLead()" type="button" class="btn btn-dark">Megrendelés</button>
+    </div>
+  </div>
