@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
@@ -14,6 +14,7 @@ import { Enviroments } from './enviroments';
 import { NovenyekComponent } from './part/novenyek/novenyek.component';
 import { RendelesComponent } from './part/rendeles/rendeles.component';
 import { FilterPipe } from './filter.pipe';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FilterPipe } from './filter.pipe';
     NgbModule,
     AngularFireModule.initializeApp(Enviroments.firebaseConfig),
     AngularFireDatabaseModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
